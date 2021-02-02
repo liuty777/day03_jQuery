@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		ul{
+			list-style: none; /*去除列表的标记*/
+			width:200px;
+			heihgt:200px;
+			background-color:#aaaaaa	;
+		}
+		ul li{
+			line-height:28px;
+
+		}
+		.mo{
+			background-color: #f00000;
+			color:#fff;
+		}
+
+
+
+	</style>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//给文本框绑定change事件
+		$("#username").change(function () {
+			//var unValue = $(this).val();
+			var unValue = this.value
+			if("cxk" == unValue){
+				$("#unMsg").text("用户名以存在!").css("color","red")
+			}else{
+				$("#unuMsg").html("用户名可以!").css("color","red")
+
+			}
+
+		})
+		//mouseover&mouserout
+		$("a").mouseover(function () {
+			$(this).addClass("mo")
+
+		}).mouseout(function () {
+			$(this).removeClass("mo");
+		})
+
+
+		
+	});
+</script>
+</head>
+<body>
+	<form action="">
+		用户名：<input type="text" name="username" id="username">
+		<span id="unMsg"></span><br>
+		密码：<input type="password" name="pwd"><br>
+		<input type="submit">
+	</form>
+	<h2>mouseover$mouseout事件</h2>
+	<ul>
+		<li><a>家用电器</a></li>
+		<li><a>手机</a>|<a>数码</a></li>
+		<li><a>男装</a>|<a>女装</a></li>
+		<li><a>母婴</a>|<a>玩具</a></li>
+	</ul>
+
+
+</body>
+</html>

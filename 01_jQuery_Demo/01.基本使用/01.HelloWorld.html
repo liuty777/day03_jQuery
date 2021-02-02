@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HellojQuery</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		// alert($)
+		/*$(function () {
+			$("#btnId").click(function () {
+				alert("hello jQuery!");
+
+
+			})
+			$(".class_2").click(function () {
+				alert("Say hello!<>");
+			})
+		})*/
+		$(function(){
+			$("#btnId").click(function(){
+				alert("say say")
+				if(confirm("点开t/f")==true){
+					alert(true)
+				}else{
+					alert(false)
+				}
+			})
+
+
+		})
+		$(function(){
+			$(".class_2").click(function(){
+				alert("hello hello");
+				confirm("t/f")?alert( "sdfds"):alert("fsdf")
+
+			})
+		})
+
+	</script>
+
+
+</head>
+<body>
+	<button id="btnId">SayHello</button>
+	<button class = "class_2">SayHello_bthId_2</button>
+</body>
+</html>

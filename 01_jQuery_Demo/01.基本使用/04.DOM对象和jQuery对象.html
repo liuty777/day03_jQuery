@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM对象和jQuery对象</title>
+	<script type="text/javascript" src="../script/jquery-1.7.2.js"	>
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			/*$("#dom2dom").click(function () {
+				alert(document.getElementById("testDiv").innerText);
+			})
+			$("#jQuery2jQuery").click(function () {
+				alert($("#testDiv").text());//text()|html()
+			})*/
+
+			/*$("#jQuery2jQuery").click(function () {
+				alert($(document.getElementById("testDiv")).html());
+			})
+			$("#jQuery2dom").click(function () {
+				alert($("#testDiv")[0].innerText);
+				//等同
+				//alert($("#testDiv").get(0).innerText);
+			})*/
+			/*$("#dom2jQuery").click(function () {
+				alert($(document.getElementById("testDiv")).text());
+			})
+			$("#jQuery2dom").click(function () {
+				alert($("#testDiv")[0].innerText);
+				// alert($("#testDiv").get(0).innerText)
+			})*/
+
+			$(function () {
+				$("#dom2jQuery").click(function () {
+					alert($(document.getElementById("testDiv")).text())
+				})
+				$("#jQuery2dom").click(function () {
+					alert($("#testDiv")[0].innerText);// 或者 alert($("#testDiv").get(0).innerText);
+				})
+
+			})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		})
+
+
+
+	</script>
+</head>
+<body>
+	<div id="testDiv">挤进尚硅谷，注定你优秀！</div>
+	<br/>
+	<button id="dom2dom">使用DOM对象调用DOM方法</button>
+	<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+	<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+	<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+</body>
+</html>

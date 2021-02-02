@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>尚硅谷会员注册页面</title>
+    <link type="text/css" rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/register.css" />
+    <style type="text/css">
+      .login_form {
+        height: 420px;
+        margin-top: 25px;
+      }
+    </style>
+    <script type="text/javascript" src="../../static/script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var re_username = /^[a-zA-Z0-9_]{6,18}$/;
+        var re_pwd = /^[a-z0-9A-Z_]{8,17}$/;
+         //var re_email = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+       var re_email = /^[0-9A-Za-z]+@[a-z]+[\.][c][o][m]$/
+        function fun_usernameChange(){
+          var test_user =  $("#username").val();
+          if(re_username.test(test_user)!=true){
+            $("#unMsg_user").css("visibility","visible");
+            return false
+          }else{
+            $("#unMsg_user").css("visibility","hidden")
+          }
+
+        }
+
+        function fun_pwdChange(){
+          var test_pwd=  $("#password").val();
+          if(re_pwd.test(test_pwd)!=true){
+            $("#unMsg_pwd").css("visibility","visible");
+            return false
+          }else{
+            $("#unMsg_pwd").css("visibility","hidden")
+          }
+
+        }
+        function fun_pwdsChange(){
+          if($("#password").val()!=$("#passwords").val()){
+            $("#unMsg_pwds").css("visibility","visible");
+            return false
+          }else{
+            $("#unMsg_pwds").css("visibility","hidden")
+          }
+
+        }
+        function fun_emailChange(){
+          var test_email = $("#email").val();
+          if(re_email.test(test_email)!=true){
+            $("#unMsg_email").css("visibility","visible");
+            return false
+          }else{
+            $("#unMsg_email").css("visibility","hidden")
+          }
+
+        }
+        function fun_codeChange(){
+          var re_code = /^[0-9A-Za-z]{6}$/;
+          if(re_code.test($("#code").val())!=true){
+            $("#unMsg_code").css("visibility","visible");
+            return false
+          }else{
+            $("#unMsg_code").css("visibility","hidden")
+          }
+
+        }
+        $("#username").change(fun_usernameChange);
+        $("#password").change(fun_pwdChange);
+        $("#passwords").change(fun_pwdsChange);
+        $("#email").change(fun_emailChange);
+        $("#code").change(fun_codeChange);
+        $(".btn").click(fun_codeChange)
+        $(".btn").click(fun_emailChange)
+        $(".btn").click(fun_pwdsChange)
+        $(".btn").click(fun_pwdChange)
+        $(".btn").click(fun_usernameChange)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      })
+
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <div id="login_header">
+      <a href="../../index.html">
+        <img class="logo_img" alt="" src="../../static/img/logo.gif" />
+      </a>
+    </div>
+
+    <div class="login_banner">
+      <div class="register_form">
+        <h1>注册尚硅谷会员</h1>
+        <form action="regist_success.html">
+          <div class="form-item">
+            <div>
+              <label>用户名称:</label>
+              <input type="text" placeholder="请输入用户名"  id="username"/>
+            </div>
+            <span class="errMess" id="unMsg_user">用户名应为6~18位数组和字母组成</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>用户密码:</label>
+              <input type="password" placeholder="请输入密码" id="password" />
+            </div>
+            <span class="errMess" id="unMsg_pwd">密码的长度至少为8位</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>确认密码:</label>
+              <input type="password" placeholder="请输入确认密码" id="passwords"/>
+            </div>
+            <span class="errMess" id="unMsg_pwds">密码两次输入不一致</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>用户邮箱:</label>
+              <input type="text" placeholder="请输入邮箱" id="email"/>
+            </div>
+            <span class="errMess" id="unMsg_email">请输入正确的邮箱格式</span>
+          </div>
+          <div class="form-item">
+            <div>
+              <label>验证码:</label>
+              <div class="verify">
+                <input type="text" placeholder="" id="code"/>
+                <img src="../../static/img/code.bmp" alt="" />
+              </div>
+            </div>
+            <span class="errMess" id="unMsg_code">请输入正确的验证码</span>
+          </div>
+          <button class="btn">注册</button>
+        </form>
+      </div>
+    </div>
+    <div id="bottom">
+      <span>
+        尚硅谷书城.Copyright &copy;2015
+      </span>
+    </div>
+  </body>
+</html>
